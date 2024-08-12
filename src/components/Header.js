@@ -41,10 +41,10 @@ function Header({ setCurrentPage }) {
             <a href="/login-form" className="login-link">Увійти тут</a>
           </div>
         </div>
+
         <button className="wishlist-button">
-          <img src={btnWishlist} alt="Wishlist" className="icon-image" />
-        </button>
-        <div className="cart-section">
+            <img src={btnWishlist} alt="Wishlist" className="icon-image" />
+          </button>
           <button className="cart-button">
             <img src={btnCart} alt="Cart" className="icon-image" />
           </button>
@@ -52,8 +52,6 @@ function Header({ setCurrentPage }) {
             <span className="cart-items">{cartItems} предметів</span>
             <span className="cart-price">{cartprice}  ₴</span>
           </div>
-        </div>
-
       </div>
     </header>
   );

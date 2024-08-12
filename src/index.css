@@ -3,17 +3,17 @@
     flex-direction: column;
     align-items: stretch;
     width: 100%;
-    min-height: 100vh;
+    height: auto;
     margin: 0; 
     box-sizing: border-box;
+    background-color: #ce4e4e;
   }
   body {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    background-color: #c92482;
+    background-color: #F5F5F5;
     width: 100%;
-    min-height: 100vh;
+    height: auto;
     margin: 0; 
     box-sizing: border-box;
   }

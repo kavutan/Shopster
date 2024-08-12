@@ -1,11 +1,14 @@
 .menu-category-banner {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color:#ea3535;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #ea3535;
     width: 90%;
-    height: 86.22vh;
-    gap: 1.85%;
-    box-sizing: border-box; 
-    margin:0;
-  }
+    height: auto;
+    gap: 1.9%;
+    box-sizing: border-box;
+    margin: 0;
+    position: relative;
+}
+
+
