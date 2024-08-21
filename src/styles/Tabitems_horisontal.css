@@ -1,0 +1,14 @@
+
+.tabitems_horisontal {
+   
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 16px 0;
+    gap: 24px;
+    width: 1296px;
+    height: 489px;
+    background-color: rgb(193, 128, 30);
+}
+   
+  

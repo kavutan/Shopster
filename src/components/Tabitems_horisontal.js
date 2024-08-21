@@ -3,7 +3,9 @@ import '../styles/Tabitems_horisontal.css';
 
 function Tabitems_horisontal() {
   return (
-    <div></div>
+    <div className="tabitems_horisontal">
+      1111111
+    </div>
   );
 }
 
