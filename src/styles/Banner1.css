@@ -1,6 +1,6 @@
 .banner1 {
-    width: 78.3%;
-    height: 100%;
+    width: 70.48vw;
+    height: 53.88vw;
     background-color: black;
     display: flex;
     flex-direction: row;
@@ -9,6 +9,7 @@
     margin: 0;
     gap: 0;
     position: relative;
+    background-color: aquamarine;
 }
 
 .banner_img {
@@ -45,8 +46,8 @@
 
 .purchase-button:hover {
     
-    border-color:#6746CE;
-    color: #6746CE;
+    border:none;
+    background-color: #333333;
 }
 .purchase-button2 {
     font-family: 'Wix Madefor Display', sans-serif;
@@ -74,8 +75,9 @@
 
 .purchase-button2:hover {
     
-    border-color:#6746CE;
-    color: #6746CE;
+    border:none;
+    background-color: #221F1F;
+    color:#E9E9E9; 
 }
 
 
@@ -84,7 +86,7 @@
     align-items: flex-start;
     background-color: #171717;
     width: 30%;
-    height: 28%;
+    height: 15.5vw;
     box-sizing: border-box;
     margin: 0;
     position: absolute;
@@ -98,7 +100,7 @@
     align-items: flex-start;
     background-color: #EBEBEB;
     width: 30%;
-    height: 28%;
+    height: 15.5vw;
     box-sizing: border-box;
     margin: 0;
     position: absolute;

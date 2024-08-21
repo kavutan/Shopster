@@ -1,0 +1,71 @@
+.left-sidebar-page {
+  display: flex;
+  flex-direction: row;
+  width: 17.7%; 
+  height: auto; 
+  position: fixed;
+  top: 6.7vw;
+  left: 3%;
+  z-index: 1000; 
+  box-sizing: border-box;
+  overflow-y: auto; 
+  transform: scale(1.2);  
+  transform-origin: top left; 
+}
+
+.left-sidebar-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5%; 
+  height: 5.1%; 
+  border-left: 1vw solid #221F1F;
+  box-sizing: border-box;
+  display: flex;
+}
+
+.cross {
+  width: 2.2vw; 
+  height: 2.2vw; 
+  background-color: #221F1F; 
+  position: absolute;
+  right: 0; 
+  top: 0.6vw; 
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.cross::before, .cross::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 0.15vw; 
+  background-color: white; 
+  transform-origin: center;
+}
+
+.cross::before {
+  transform: translate(-50%, -50%) rotate(45deg); /* Перша лінія */
+}
+
+.cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg); /* Друга лінія */
+}
+.close-button {
+  position: absolute;
+  transform: translateX(-50%);
+  width: 2vw; 
+  height: 2vw; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  z-index: 1001; 
+  right: 0; 
+  top: 0; 
+  justify-content: center;
+  align-items: flex-end;
+}
