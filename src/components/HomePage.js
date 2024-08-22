@@ -6,7 +6,7 @@ function HomePage() {
   return (
     <div className="HomePage">
       <MenuCategoryBanner />
-      <Tabitems_horisontal/>
+      
     </div>
   );
 }

@@ -1,7 +1,7 @@
 .left-sidebar-page {
   display: flex;
   flex-direction: row;
-  width: 17.7%; 
+  width: 100%; 
   height: auto; 
   position: fixed;
   top: 6.7vw;

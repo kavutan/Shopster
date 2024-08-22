@@ -172,8 +172,8 @@
   line-height: 0.95;
 }
 
-.footer-link-item:hover {
-  color: #000; 
+.footer-links a:hover {
+  color: #6746CE; 
 }
 .footer-caption {
   font-family: 'Wix Madefor Display', sans-serif;
