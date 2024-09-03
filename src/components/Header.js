@@ -39,20 +39,17 @@ const Header = ({ setCurrentPage }) => {
         <div className="menu-strip">
           <div className="account-menu">
             <button 
-              className="account-button" 
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
+              className="account-button" onClick={() => setMenuOpen(!menuOpen)}>
               Обліковий запис
               <img 
                 src={arrowImage} 
                 alt="arrow" 
-                className={`arrow ${menuOpen ? 'open' : ''}`} 
-              /> 
+                className={`arrow ${menuOpen ? 'open' : ''}`} /> 
             </button>
             {menuOpen && (
               <div className="account-options">
-                <a href="/login">Увійти</a>
-                <a href="/register">Реєстрація</a>
+                <a onClick={() => setCurrentPage('login')}>Увійти</a>
+                <a onClick={() => setCurrentPage('register')}>Реєстрація</a>
               </div>
             )}
           </div>
@@ -61,7 +58,7 @@ const Header = ({ setCurrentPage }) => {
             <a href="/login-form" className="login-link">Увійти тут</a>
           </div>
         </div>
-        <button className="wishlist-button">
+        <button className="wishlist-button" onClick={() => setCurrentPage('wishlist')}>
           <img 
             src={btnWishlist} 
             alt="Wishlist" 
