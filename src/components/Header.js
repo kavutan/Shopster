@@ -20,7 +20,7 @@ const Header = ({ setCurrentPage }) => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
+        <div className="logo" onClick={() => setCurrentPage('home')}>
           <img src={frame} alt="Logo" />
         </div>
         <button className="catalog-button" onClick={toggleSidebar}>

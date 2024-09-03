@@ -1,0 +1,161 @@
+body, button, input, label, p, a {
+  font-family: 'Wix Madefor Display', sans-serif;
+}
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 200px);
+  background-color: #f9f9f9;
+}
+
+.login-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center; /* Центрування вкладок */
+  margin-bottom: 20px;
+  white-space: nowrap;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  text-align: center; /* Центрування тексту всередині кнопки */
+}
+
+.tabs .login-button {
+  flex: 0 0 150px; /* Фіксована ширина для кнопки "Увійти" */
+  max-width: 150px; /* Обмеження ширини кнопки "Увійти" */
+}
+
+.tabs .register-button {
+  flex: 1; /* Кнопка "Створити обліковий запис" займатиме решту простору */
+}
+
+.tabs button::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background: #6746CE;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0; /* Ширина за замовчуванням 0 */
+  transition: width 0.3s ease; /* Анімація розширення */
+}
+
+.tabs button.active::after {
+  width: 100%; /* Ширина підкреслення для активної вкладки */
+}
+
+.login-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+form label.required::after {
+  content: '*';
+  color: #FF1887;
+  margin-left: 5px;
+  font-weight: normal;
+  font-size: 18px;
+}
+
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  font-weight: normal;
+}
+
+form input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 4px;
+  border: 2px solid #6746CE;
+  appearance: none;
+  cursor: pointer;
+  position: relative;
+  vertical-align: middle;
+}
+
+form input[type="checkbox"]:checked {
+  background-color: #6746CE;
+  border: 2px solid #6746CE;
+}
+
+form input[type="checkbox"]:checked::after {
+  content: '✔';
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #6746CE;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #6746CE;
+  text-align: left;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+p {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+  font-weight: normal;
+}
+
+p a {
+  color: #6746CE;
+  text-decoration: underline;
+  margin: 0;
+  font-size: 12px;
+}
