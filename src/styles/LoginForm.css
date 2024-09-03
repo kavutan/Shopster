@@ -6,8 +6,9 @@ body, button, input, label, p, a {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 200px);
+  min-height: calc(100vh - 13.6vw);
   background-color: #f9f9f9;
+  padding-top: 6.8vw; /* Відступ зверху, щоб форма не заїжджала під header */
 }
 
 .login-form-wrapper {

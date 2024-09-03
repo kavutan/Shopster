@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../styles/Wishlist.css';
+import emptyWishlistImage from '../images/empty_wishlist.svg';
 
 const WishlistPage = ({ setCurrentPage, wishlistItems = [] }) => {
   const [email, setEmail] = useState('');
@@ -18,6 +19,11 @@ const WishlistPage = ({ setCurrentPage, wishlistItems = [] }) => {
     <div className="wishlist-container">
       {wishlistItems.length === 0 ? (
         <div>
+          <img 
+            src={emptyWishlistImage} 
+            alt="Порожній список бажань" 
+            className="empty-wishlist-image"
+          />
           <h1>Список бажань</h1>
           <p>Ваш список бажань наразі порожній.</p>
           <button className="return-button" onClick={() => setCurrentPage('home')}>
@@ -111,8 +117,7 @@ const WishlistPage = ({ setCurrentPage, wishlistItems = [] }) => {
             </div>
 
             <div className="right-actions">
-              <button className="add-selected-button">Додати обране</button>
-              <button className="add-all-button">Додати все</button>
+              <button className="delete-all-button">Видалити все</button>
             </div>
           </div>
         </div>

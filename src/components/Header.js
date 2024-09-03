@@ -55,7 +55,7 @@ const Header = ({ setCurrentPage }) => {
           </div>
           <div className="welcome-message">
             <span>Привіт,</span>
-            <a href="/login-form" className="login-link">Увійти тут</a>
+            <a onClick={() => setCurrentPage('login')} className="login-link">Увійти тут</a>
           </div>
         </div>
         <button className="wishlist-button" onClick={() => setCurrentPage('wishlist')}>

@@ -1,11 +1,13 @@
-body, button, input, label, p, a, h1 {
-  font-family: 'Wix Madefor Display', sans-serif;
-}
+  body, button, input, label, p, a, h1 {
+    font-family: 'Wix Madefor Display', sans-serif;
+  }
 
-.wishlist-container {
+  .wishlist-container {
     background-color: white;
     text-align: center;
-    padding: 2rem;
+    padding: 0 2rem 2rem 2rem;
+    min-height: calc(100vh - 13.6vw);
+    padding-top: 6.8vw; /* Відступ зверху, щоб форма не заїжджала під header */
   }
   
   .return-button {
@@ -199,7 +201,7 @@ body, button, input, label, p, a, h1 {
   
   .right-actions {
     display: flex;
-    justify-content: space-between;
+    align-items: right;
     width: 20%;
     flex-grow: 1;
   }
@@ -224,7 +226,7 @@ body, button, input, label, p, a, h1 {
     margin-right: auto;
   }
   
-  .add-selected-button {
+  .delete-all-button {
     background-color: white;
     color: #6746CE;
     border: 1px solid #6746CE;
@@ -232,19 +234,8 @@ body, button, input, label, p, a, h1 {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 4px;
-    margin-left: 1rem;
-  }
-  
-  .add-all-button {
-    background-color: white;
-    color: #6746CE;
-    border: 1px solid #6746CE;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    border-radius: 4px;
-    margin-left: 1rem;
-  }
+    margin-left: auto; /* Додаємо, щоб вирівняти по правому краю */
+  }  
 
   input[type="checkbox"] {
     width: 20px;
@@ -279,4 +270,12 @@ body, button, input, label, p, a, h1 {
 
   .not-empty-header {
     text-align: left;
+    padding-top: 2vw;
   }
+
+  .empty-wishlist-image {
+    width: 200px;
+    height: 200px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }  
