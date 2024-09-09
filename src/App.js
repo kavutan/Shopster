@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import LoginForm from './pages/LoginForm';
 import MyOrders from './pages/MyOrders';
 import Wishlist from './pages/Wishlist';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/register" element={<LoginForm />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/myorders" element={<MyOrders />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
         </Routes>
         <Footer />
       </div>
