@@ -6,6 +6,7 @@ import arrowImage from '../images/Wishlist.svg';
 import btnCart from '../images/Vector2.svg';
 import btnWishlist from '../images/Vector.svg';
 import LeftSidebar from '../components/LeftSidebarPage'; 
+import { Link } from 'react-router-dom';
 
 const Header = ({ setCurrentPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -39,29 +40,28 @@ const Header = ({ setCurrentPage }) => {
         <div className="menu-strip">
           <div className="account-menu">
             <button 
-              className="account-button" 
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
+              className="account-button" onClick={() => setMenuOpen(!menuOpen)}>
               Обліковий запис
               <img 
                 src={arrowImage} 
                 alt="arrow" 
-                className={`arrow ${menuOpen ? 'open' : ''}`} 
-              /> 
+                className={`arrow ${menuOpen ? 'open' : ''}`} /> 
             </button>
             {menuOpen && (
-              <div className="account-options">
-                <a href="/login">Увійти</a>
-                <a href="/register">Реєстрація</a>
+               <div className="account-options">
+                <Link to="/register" className="account-option-button">
+                  Увійти
+                </Link>
               </div>
+            
             )}
           </div>
           <div className="welcome-message">
             <span>Привіт,</span>
-            <a href="/login-form" className="login-link">Увійти тут</a>
+            <button onClick={() => setCurrentPage('login')} className="login-link-button">Увійти тут</button>
           </div>
         </div>
-        <button className="wishlist-button">
+        <button className="wishlist-button" onClick={() => setCurrentPage('wishlist')}>
           <img 
             src={btnWishlist} 
             alt="Wishlist" 
@@ -85,5 +85,6 @@ const Header = ({ setCurrentPage }) => {
 };
 
 export default Header;
+
 
 

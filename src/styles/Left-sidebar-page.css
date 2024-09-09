@@ -11,6 +11,7 @@
   overflow-y: auto; 
   transform: scale(1.2);  
   transform-origin: top left; 
+  position: absolute; 
 }
 
 .left-sidebar-page::before {
@@ -27,9 +28,9 @@
 
 .cross {
   width: 2.2vw; 
-  height: 2.2vw; 
+  height: 2.2vw;
   background-color: #221F1F; 
-  position: absolute;
+
   right: 0; 
   top: 0.6vw; 
   justify-content: center;
@@ -48,17 +49,15 @@
 }
 
 .cross::before {
-  transform: translate(-50%, -50%) rotate(45deg); /* Перша лінія */
+  transform: translate(-50%, -50%) rotate(45deg); 
 }
 
 .cross::after {
-  transform: translate(-50%, -50%) rotate(-45deg); /* Друга лінія */
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 .close-button {
-  position: absolute;
-  transform: translateX(-50%);
-  width: 2vw; 
-  height: 2vw; 
+  width: 2.2vw; 
+  height: 2.2vw; 
   background: none;
   border: none;
   cursor: pointer;
@@ -66,6 +65,9 @@
   z-index: 1001; 
   right: 0; 
   top: 0; 
-  justify-content: center;
-  align-items: flex-end;
+  justify-content: top;
+  align-items: flex-start;
+  position: relative;
+  margin-left: -3%;
+  margin-top: 0.5%;
 }

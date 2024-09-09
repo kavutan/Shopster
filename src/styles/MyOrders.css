@@ -1,0 +1,45 @@
+.my-orders {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8.8vw 0;
+    gap: 4.44vw;
+    position: relative;
+    width: 100vw;
+    height: 72vw;
+    background-color: #d60d0d;
+  }
+  
+.frame-302 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6.17% 5vw 27.29% 5vw;
+  gap: 42.43vw;
+  width: 90vw;
+  height: 4.62%;
+  background-color: blue;
+}
+.frame-220 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  width: 37.64vw;
+  height: 85.42%;
+  background-color: #72eb08; 
+}
+.frame-214 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 1.39vw;
+  width: 9.93vw;
+  height: 100%;
+  background-color:black; 
+}
+  

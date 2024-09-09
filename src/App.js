@@ -1,31 +1,30 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import HomePage from './components/HomePage';
-
+import HomePage from './pages/HomePage';
+import LoginForm from './pages/LoginForm';
+import MyOrders from './pages/MyOrders';
+import Wishlist from './pages/Wishlist';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState('home');
-
-  const renderPage = () => {
-    switch (currentPage) {
-      case 'home':
-        return <HomePage />;
-      default:
-        return <HomePage />;
-    }
-  };
-
   return (
-    <div className="App">
-    <Header setCurrentPage={setCurrentPage} />
-    {renderPage()}
-    <Footer />
-    </div>
-  
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/register" element={<LoginForm />} />
+          <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/myorders" element={<MyOrders />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
 export default App;
+
 
 

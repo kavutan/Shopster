@@ -13,15 +13,17 @@ const LeftSidebarPage = () => {
     <div className="left-sidebar-page"> 
       {isSidebarVisible && (
         <>
+          
+          <LeftSidebar />
           <button className="close-button" onClick={handleCloseSidebar}>
             <div className="cross"></div>
           </button>
-          <LeftSidebar />
         </>
       )}
-    </div>
+      </div>
   );
 };
 
 export default LeftSidebarPage;
+
 
