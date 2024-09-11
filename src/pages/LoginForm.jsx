@@ -21,8 +21,18 @@ const LoginForm = () => {
     email: '',
     password: '',
   });
+  
 
   const navigate = useNavigate();
+  const handleFocus = (field) => (e) => {
+    e.target.classList.add('filled');
+  };
+  
+  const handleBlur = (field) => (e) => {
+    e.target.classList.remove('filled');
+    setTouched((prevTouched) => ({ ...prevTouched, [field]: true }));
+  };
+
 
   const handleInputChange = (field) => (e) => {
     switch (field) {
@@ -38,11 +48,10 @@ const LoginForm = () => {
       default:
         break;
     }
+   
   };
 
-  const handleBlur = (field) => () => {
-    setTouched((prevTouched) => ({ ...prevTouched, [field]: true }));
-  };
+
 
   const handleTabClick = (isLoginTab) => () => {
     setIsLogin(isLoginTab);
@@ -92,10 +101,9 @@ const LoginForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Перевіряємо всі поля під час надсилання
+
     if (!validate()) {
-      return; // Перешкоджаємо надсиланню форми, якщо валідація не пройшла
+      return;
     }
 
     const userData = {
@@ -172,6 +180,8 @@ const LoginForm = () => {
                   value={userName}
                   onChange={handleInputChange('userName')}
                   onBlur={handleBlur('userName')}
+                  onFocus={handleFocus('userName')}
+                  
                 />
                 {errors.userName && (
                   <span className="error">{errors.userName}</span>
@@ -183,12 +193,12 @@ const LoginForm = () => {
               <span className={`required ${errors.email ? 'show' : ''}`}>*</span>
               <input
                 type="email"
-                id="email"
                 placeholder="Електронна пошта"
                 value={email}
                 onChange={handleInputChange('email')}
                 onBlur={handleBlur('email')}
-              />
+                onFocus={handleFocus('email')
+                } />
               {errors.email && (
                 <span className="error">{errors.email}</span>
               )}
@@ -204,8 +214,9 @@ const LoginForm = () => {
                   value={password}
                   onChange={handleInputChange('password')}
                   onBlur={handleBlur('password')}
+                  onFocus={handleFocus('password')}
                 />
-               <button
+                <button
                   type="button"
                   className="password-toggle"
                   onClick={() => setShowPassword(!showPassword)}
@@ -229,7 +240,7 @@ const LoginForm = () => {
             </label>
             {!isLogin && (
               <div className="text-container">
-                Ваші особисті дані будуть використовуватися для підтримки вашого досвіду на цьому веб-сайті, щоб керувати доступом до вашого облікового запису та для інших цілей, описаних у нашій <a href="#">політиці конфіденційності</a>.
+                Ваші особисті дані будуть використовуватися для підтримки вашого досвіду на цьому веб-сайті, щоб керувати доступом до вашого облікового запису та для інших цілей, описаних у нашій <a href="/privacypolicy">політиці конфіденційності</a>.
               </div>
             )}
             {isLogin && (

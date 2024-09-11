@@ -40,11 +40,11 @@ function Footer({ setCurrentPage }) {
             <span className="link" data-href="/service-centers">Сервісні центри</span>
           </div>
           <div className="column-container">
-            <a href="/info" className="link">Інформація про компанію</a>
-            <span className="link" data-href="/about">Про нас</span>
-            <span className="link" data-href="/conditions">Умови використання сайту</span>
-            <span className="link" data-href="/vacancies">Вакансії</span>
-            <span className="link" data-href="/contacts">Контакти</span>
+            <a href="/info" className="link">Сервіси</a>
+            <span className="link" data-href="/about">Бонусний рахунок</span>
+            <span className="link" data-href="/conditions">Подарункові сертифікати</span>
+            <span className="link" data-href="/vacancies">Обмін</span>
+            <span className="link" data-href="/contacts">Корпортивним клієнтам</span>
           </div>
         </div>
 
