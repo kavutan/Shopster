@@ -183,7 +183,7 @@ form input[type="checkbox"] {
   height: 1.39vw;
   margin-right: 0.69vw;
   border-radius: 0.27vw;
-  border: 0.14vw solid #6746CE;
+  border: 0.14vw solid black;
   appearance: none;
   cursor: pointer;
   position: relative;
@@ -308,7 +308,11 @@ form input[type="password"]:hover,
 form input[type="text"]:hover {
   border: 0.1vw solid #6746CE; 
 }
-
+button[type="submit"]:hover {
+  background-color: #000000; 
+  color: white;
+  border-color: #000000;
+}
 
 
 

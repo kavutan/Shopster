@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/LoginForm.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -21,18 +21,26 @@ const LoginForm = () => {
     email: '',
     password: '',
   });
-  
+  const [rememberMe, setRememberMe] = useState(false); // Додано
 
   const navigate = useNavigate();
+
+  // Перевірка localStorage при завантаженні компоненту
+  useEffect(() => {
+    const savedEmail = localStorage.getItem('email');
+    const savedPassword = localStorage.getItem('password');
+    if (savedEmail) setEmail(savedEmail);
+    if (savedPassword) setPassword(savedPassword);
+  }, []);
+
   const handleFocus = (field) => (e) => {
     e.target.classList.add('filled');
   };
-  
+
   const handleBlur = (field) => (e) => {
     e.target.classList.remove('filled');
     setTouched((prevTouched) => ({ ...prevTouched, [field]: true }));
   };
-
 
   const handleInputChange = (field) => (e) => {
     switch (field) {
@@ -48,10 +56,7 @@ const LoginForm = () => {
       default:
         break;
     }
-   
   };
-
-
 
   const handleTabClick = (isLoginTab) => () => {
     setIsLogin(isLoginTab);
@@ -75,7 +80,6 @@ const LoginForm = () => {
   const validate = () => {
     const newErrors = {};
 
-    // Завжди перевіряємо всі поля під час надсилання
     if (!isLogin) {
       if (!userName.trim()) {
         newErrors.userName = 'Заповніть це поле!';
@@ -139,6 +143,13 @@ const LoginForm = () => {
       console.log(data);
       if (isLogin) {
         sessionStorage.setItem('tokenKey', JSON.stringify(data));
+        if (rememberMe) {
+          localStorage.setItem('email', email);
+          localStorage.setItem('password', password);
+        } else {
+          localStorage.removeItem('email');
+          localStorage.removeItem('password');
+        }
         alert('Вхід успішний!');
         navigate('/');
       } else {
@@ -181,7 +192,6 @@ const LoginForm = () => {
                   onChange={handleInputChange('userName')}
                   onBlur={handleBlur('userName')}
                   onFocus={handleFocus('userName')}
-                  
                 />
                 {errors.userName && (
                   <span className="error">{errors.userName}</span>
@@ -197,8 +207,8 @@ const LoginForm = () => {
                 value={email}
                 onChange={handleInputChange('email')}
                 onBlur={handleBlur('email')}
-                onFocus={handleFocus('email')
-                } />
+                onFocus={handleFocus('email')}
+              />
               {errors.email && (
                 <span className="error">{errors.email}</span>
               )}
@@ -232,7 +242,6 @@ const LoginForm = () => {
                     </svg>
                   )}
                 </button>
-
               </div>
               {errors.password && (
                 <span className="error">{errors.password}</span>
@@ -245,14 +254,19 @@ const LoginForm = () => {
             )}
             {isLogin && (
               <label>
-                <input type="checkbox" />
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={() => setRememberMe(!rememberMe)}
+                />
                 Запам'ятати мене
               </label>
             )}
-            <button type="submit">{isLogin ? 'Увійти' : 'Створити'}</button>
+            <button type="submit" className="submit-button">
+              {isLogin ? 'Увійти' : 'Зареєструватися'}
+            </button>
+            {isLogin && <a href="/privacy-policy">Втратили пароль?</a>}
           </form>
-          {isLogin && <a href="/privacy-policy">Втратили пароль?</a>}
-
         </div>
       </div>
     </div>
@@ -260,6 +274,3 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
-
-
-
