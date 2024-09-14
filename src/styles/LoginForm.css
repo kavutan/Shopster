@@ -233,7 +233,6 @@ button[type="submit"] {
 
 a {
   display: inline-block;
-  color: #6746CE;
   text-align: left;
   text-decoration: none;
   font-weight: bold;
@@ -244,6 +243,12 @@ a {
   line-height: 1.5;
   letter-spacing: 0.05em;
   text-align: left;
+  text-decoration: none;
+  color: #6746CE;
+  
+}
+.no-wrap {
+  white-space: nowrap;
 }
 
 .text-container {
@@ -261,6 +266,7 @@ a {
   line-height: 1.5;
   text-align: left;
   padding-left: 2%;
+  
 }
 
 .password-container {
@@ -315,4 +321,56 @@ button[type="submit"]:hover {
 }
 
 
+a:hover {
+  text-decoration: underline;
+}
 
+.forgot-password {
+  display: inline-flex; 
+  align-items: center; 
+  background: none; 
+  border: none; 
+  color: black; 
+  font-size: 16px; 
+  cursor: pointer; 
+  text-decoration: none; 
+  padding: 0; 
+  font-family: 'Wix Madefor Display', sans-serif;
+  font-weight: 600;
+  font-size: 1vw;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  margin-top: 1vw;
+}
+.forgot-password:hover{
+  color: #6f42c1; ; 
+}
+h2
+{
+  font-family: 'Wix Madefor Display', sans-serif;
+    font-weight: 700;
+    font-size: 1.8vw; 
+    color: #6746CE;
+    margin-bottom: 1.5vw; 
+    line-height: 1.2;
+}
+.back-to-login {
+  display: inline-flex; 
+  align-items: center; 
+  background: none; 
+  border: none; 
+  color: black; 
+  font-size: 16px; 
+  cursor: pointer; 
+  text-decoration: none; 
+  padding: 0; 
+  font-family: 'Wix Madefor Display', sans-serif;
+  font-weight: 600;
+  font-size: 1vw;
+  line-height: 1.5;
+  letter-spacing: 0.05em;
+  margin-top: 1vw;
+}
+.back-to-login:hover{
+  color: #6f42c1;  
+}

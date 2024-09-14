@@ -1,7 +1,15 @@
 import React from 'react';
 import '../styles/PrivacyPolicy.css';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const PrivacyPolicy = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
   return (
 
     <div className="privacy-policy">
@@ -61,6 +69,9 @@ const PrivacyPolicy = () => {
       </p>
       <p>Телефон: +380631789603</p>
       <p>Електронна пошта: kavutan605@gmail.com</p>
+      <button className="back-button" onClick={handleGoBack}>
+        Повернутися назад →
+      </button>
     </div>
 
   );
