@@ -1,0 +1,51 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background:  #FFFFFF; 
+   
+}
+
+.mask-group {
+    width: 88.46%;
+    height: 87%;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: #FFFFFF;
+    margin-bottom: 3%;
+    position: relative; 
+}
+
+.mask-group-image {
+    width: 77%;
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.carousel-controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 5%;
+    width: 30%;
+    height: 7%;
+}
+
+.carousel-btn {
+    width: 0.55vw;
+    height: 0.55vw;
+    border-radius: 50%;
+    background: #8C6DF5;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.carousel-btn.active {
+    background: #6746CE;
+}

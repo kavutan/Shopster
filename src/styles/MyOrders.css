@@ -1,0 +1,257 @@
+.my-orders {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8.8vw 0;
+    /*gap: 0.44vw;*/
+    position: relative;
+    width: 100vw;
+    height: 72vw;
+    
+  }
+.text-1{
+    /* Мої замовлення */
+
+width: 90vw;
+height: 54px;
+/* HEADER/h3_Bold */
+font-family: 'Wix Madefor Display', sans-serif;
+font-style: bold;
+font-weight: 700;
+font-size: 36px;
+line-height: 54px;
+/* identical to box height, or 150% */
+color: #000000;
+}
+  
+.frame-302 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6.17% 5vw 7.29% 5vw;
+  width: 90vw;
+  height: 4.62%;
+  
+}
+.frame-220 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0;
+  margin: 0 auto;
+  width: 37.64vw;
+  height: 85.42%; 
+}
+.frame-214 {
+  /* Frame 214 */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start; /* Вирівнюємо по горизонталі (по центру) */
+justify-content: center; /* Вирівнюємо по вертикалі (по центру) */
+padding: 0px;
+gap: 20px;
+width: 143px;
+height: 48px;
+}
+
+.frame-215 {
+  /* Frame 215 */
+
+/* Auto layout */
+display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0;
+  gap: 20px;
+  width: 50%; /* Займає половину ширини від батьківського елемента */
+  height: 48px;
+}
+.frame-204{
+  /* Frame 204 */
+
+box-sizing: border-box;
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: flex-start;
+padding: 12px 1px;
+gap: 10px;
+width: 143px;
+height: 48px;
+/* Grey_3 */
+border: 1px solid #E9E9E9;
+border-radius: 10px;
+}
+
+.frame-204:hover {
+  border-color: #6746CE;
+}
+
+.Text{
+  /* Text */
+width: 77px;
+height: 21px;
+/* BODY 2/body2_Regular */
+font-family: 'Wix Madefor Display';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 21px;
+white-space: nowrap;
+/* Grey_2 */
+color: #757575;
+
+}
+
+.arrow-down-24{
+  /* arrow_down_24x24 */
+width: 24px;
+height: 24px;
+margin-left: auto;
+border: none;
+background-color: #FFFFFF;
+}
+
+.stroke{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  min-width: none;
+  justify-content: stretch;
+
+}
+
+.frame-334 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20 20 20 200;
+    gap: 32px;  
+    width: 90vw;
+    height: 255px;
+    background-color:#FFFFFF; 
+    
+    /* Внутрішній auto layout */
+    /*flex: none;
+    order: 3;
+    align-self: stretch;
+    flex-grow: 0;*/
+}
+
+/* Загальні стилі для таблиці */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Стилі для заголовків таблиці */
+th {
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 12px 15px;
+  border-bottom: 2px solid #ddd;
+}
+
+/* Стилі для клітинок таблиці */
+td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Стилі для рядків таблиці */
+tr:nth-of-type(even) {
+  background-color: #f9f9f9;
+}
+
+/* Стилі для рядків при наведенні */
+tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Стилі для зображення продукту */
+.product-info {
+  display: flex;
+  align-items: center;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/* Стилі для опису продукту */
+.product-description {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-description strong {
+  font-size: 14px;
+  color: #333;
+}
+
+.product-description p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Стилі для ціни */
+td:nth-of-type(2) {
+  text-align: right;
+}
+
+/* Стилі для статусу */
+td:nth-of-type(4) {
+  font-weight: bold;
+}
+
+.search-input {
+  
+  font-size: 16px;
+  width: 850px; /* Встановлюємо ширину для інпуту */
+  border: 1px solid #dfcbcb;
+  border-right: none; /* Видаляємо праву рамку для з'єднання з кнопкою */
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+  outline: none;
+  box-sizing: border-box; /* Враховуємо внутрішні відступи та ширину рамки */
+  height: 100%; /* Вирівнюємо висоту з кнопкою */
+}
+.search-input:hover {
+  border-color: #6746CE; /* Колір рамки при наведенні (синій) */
+}
+
+.search-button {
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #6746CE;
+  color: white;
+  border: 1px solid #ccc;
+  border-left: none; /* Видаляємо ліву рамку для з'єднання з інпутом */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  height: 100%; /* Вирівнюємо висоту з полем введення */
+  width: 368px;
+}
+
+.search-button:hover {
+  background-color: #050606;
+}
+
+

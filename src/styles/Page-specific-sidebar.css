@@ -10,8 +10,8 @@
     z-index: 1000; 
     box-sizing: border-box;
     overflow-y: auto; 
-    transform: scale(1.2);  /* Scale the component by 1.5 times */
-    transform-origin: top left; /* Ensure scaling starts from the top left corner */
+    transform: scale(1.2);  
+    transform-origin: top left; 
   }
   .left-sidebar {
     width: 100%; 
