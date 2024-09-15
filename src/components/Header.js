@@ -21,7 +21,7 @@ const Header = ({ setCurrentPage }) => {
   return (
     <header className="header">
       <div className="header-container">
-        <div className="logo">
+        <div className="logo" onClick={() => setCurrentPage('home')}>
           <img src={frame} alt="Logo" />
         </div>
         <button className="catalog-button" onClick={toggleSidebar}>
@@ -48,17 +48,28 @@ const Header = ({ setCurrentPage }) => {
                 className={`arrow ${menuOpen ? 'open' : ''}`} /> 
             </button>
             {menuOpen && (
+
                <div className="account-options">
                 <Link to="/register" className="account-option-button">
                   Увійти
                 </Link>
+
+              <div className="account-options">
+                <a onClick={() => setCurrentPage('login')}>Увійти</a>
+                <a onClick={() => setCurrentPage('register')}>Реєстрація</a>
+
+              </div>
               </div>
             
             )}
           </div>
           <div className="welcome-message">
             <span>Привіт,</span>
+
             <button onClick={() => setCurrentPage('login')} className="login-link-button">Увійти тут</button>
+
+           
+
           </div>
         </div>
         <button className="wishlist-button" onClick={() => setCurrentPage('wishlist')}>
