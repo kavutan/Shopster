@@ -91,3 +91,31 @@
    
     color:#6746CE;
 }
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    padding: 0;
+    gap: 1.53vw;
+    width: 100%;
+    height: 20.27vw;
+    background-color: brown;
+}
+.card_sale {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    padding: 2.22vw;
+    gap: 1.66vw;
+    isolation: isolate;
+    width: 49.15%;
+    height: 16.94vw;
+    border: 0.1vw solid #E9E9E9; 
+    border-radius: 1.5vw;
+    background-color: cornsilk;
+}

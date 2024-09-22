@@ -14,6 +14,14 @@ function Latestoffers() {
           </div>
         </div>
       </div>
+      <div className="cards">
+        <div className="card_sale">
+
+        </div>
+        <div className="card_sale">
+          
+          </div>
+      </div>
     </div>
   );
 }
