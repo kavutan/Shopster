@@ -117,7 +117,6 @@
   gap: 5%;
   width: 100%;
   white-space: nowrap;
-
 }
 
 .arrow {
@@ -133,7 +132,7 @@
 .account-options {
   display: flex;
   flex-direction: column;
-  gap: 5%;
+  gap: 20%;
   position: absolute;
   top: 100%;
   border: 0.13vw solid #E9E9E9;
@@ -141,12 +140,13 @@
   justify-content: center;
   box-shadow: 0 0.139vw 0.278vw rgba(0, 0, 0, 0.1);
   width: 100%;
-  height: 2vw;
+  height: 6vw;
   background-color: #ffffff;
   border-radius: 0 0 0.5vw 0.5vw;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  padding-left: 3%;
 }
 
 .account-option-button {
@@ -162,6 +162,7 @@
   background: none;
   border: none;
   cursor: pointer;
+  margin-left: 0.5vw;
 }
 
 .account-option-button:hover {
@@ -176,9 +177,7 @@
   white-space: nowrap;
   height: 36%;
   width: 70%;
-  padding-left: 2%;
-  padding-right: 2%;
-  margin-left: 8%;
+  
 }
 
 .welcome-message span {
@@ -217,21 +216,21 @@
 
 
 .menu-strip {
-  height: 4vw;
-  width: 41.67%;
-  gap: 1vw;
-
+  height: 100%;
+  width: 35.3%;
+  
 }
 
 .wishlist-button,
-.cart-button {
+.cart-button,
+.component30 {
   border: none;
   background: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: stretch;
-  width: 5vw;
+  width: 4vw;
   height: auto;
   background-size: cover;
   outline: none;
@@ -240,8 +239,8 @@
 }
 
 .icon-image {
-  width: 100%;
-  height: 100%;
+  width: 2vw;
+  height: 2vw;
   object-fit: contain;
   min-width: none;
   justify-content: stretch;
@@ -250,9 +249,9 @@
 .cart-info {
   display: flex;
   flex-direction: column;
-  gap: 2%;
-  width: auto;
-  height: auto;
+  gap: 17%;
+  width: 39%;
+  height: 70%;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -262,19 +261,19 @@
 .cart-price {
   font-family: 'Wix Madefor Display', sans-serif;
   font-size: 0.8vw;
+  font-weight: 500;
   line-height: 1.2;
   color: #000000;
-  margin: 0;
   padding-right: 1vw;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .account-button:hover,
 .account-button.active {
 
   color: #6746CE;
-  background-color: #E3D7FB;
 }
 
 .account-button:hover .arrow,
@@ -302,5 +301,15 @@
 
 .cart-button:hover .icon-image,
 .cart-button.active .icon-image {
+  filter: invert(26%) sepia(80%) saturate(5300%) hue-rotate(240deg) brightness(100%) contrast(110%);
+}
+
+.component30:hover,
+.component30.active {
+  color: #6746CE;
+}
+
+.component30:hover .icon-image,
+.component30.active.icon-image {
   filter: invert(26%) sepia(80%) saturate(5300%) hue-rotate(240deg) brightness(100%) contrast(110%);
 }

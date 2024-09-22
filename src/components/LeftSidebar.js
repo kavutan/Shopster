@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Left-sidebar.css';
 
 import frame1 from '../images/Storke.svg';
@@ -17,6 +17,7 @@ import icon12 from '../images/12.svg';
 import icon13 from '../images/13.svg'; 
 import icon14 from '../images/14.svg'; 
 import icon15 from '../images/15.svg'; 
+
 const categories = [
   { title: 'Ноутбуки та комп\'ютери', icon: icon1, links: [{ href: '/laptops', text: 'Ноутбуки' }, { href: '/computers', text: 'Комп\'ютери' }] },
   { title: 'Смартфони, ТВ', icon: icon2, links: [{ href: '/smartphones', text: 'Смартфони' }, { href: '/tv', text: 'Телевізори' }] },
@@ -37,13 +38,27 @@ const categories = [
 
 function LeftSidebar() {
   const [openIndex, setOpenIndex] = useState(null);
+  const sidebarRef = useRef(null);
 
   const handleClick = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+        setOpenIndex(null);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="left-sidebar">
+    <div className="left-sidebar" ref={sidebarRef}>
       <div className="header-category">
         <div className="category">Категорії</div>
       </div>
@@ -59,19 +74,18 @@ function LeftSidebar() {
               </div>
               <span className="category-title">{category.title}</span>
               {openIndex === index && (
-              <div className="dropdown-menu">
-                {category.links.map((link, linkIndex) => (
-                  <a href={link.href} key={linkIndex}>
-                    {link.text}
-                  </a>
-                ))}
-              </div>
-            )}
+                <div className="dropdown-menu">
+                  {category.links.map((link, linkIndex) => (
+                    <a href={link.href} key={linkIndex}>
+                      {link.text}
+                    </a>
+                  ))}
+                </div>
+              )}
               <div className="dropdown_conteiner">
                 <img src={frame1} alt="Stroke" className={`arrow ${openIndex === index ? 'open' : ''}`} />
               </div>
             </div>
-            
           </div>
         ))}
       </div>

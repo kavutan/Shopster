@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/LoginForm.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const REGISTER_URL = 'http://localhost:5123/gateway/users';
 const LOGIN_URL = 'http://localhost:5123/gateway/autorizes';
@@ -26,13 +26,25 @@ const LoginForm = () => {
   const [rememberMe, setRememberMe] = useState(false);
 
   const navigate = useNavigate();
+  const location = useLocation();
+  
 
   useEffect(() => {
     const savedEmail = localStorage.getItem('email');
     const savedPassword = localStorage.getItem('password');
     if (savedEmail) setEmail(savedEmail);
     if (savedPassword) setPassword(savedPassword);
-  }, []);
+
+    const queryParams = new URLSearchParams(location.search);
+    if (queryParams.get('tab') === 'login') {
+      setIsLogin(true);
+    } else if (queryParams.get('tab') === 'register') {
+      setIsLogin(false);
+      setUserName('');
+      setEmail('');
+      setPassword('');
+    }
+  }, [location]);
 
   const handleFocus = (field) => (e) => {
     e.target.classList.add('filled');
@@ -62,9 +74,14 @@ const LoginForm = () => {
   const handleTabClick = (isLoginTab) => () => {
     setIsLogin(isLoginTab);
     setIsForgotPassword(false);
-    setUserName('');
-    setEmail('');
-    setPassword('');
+
+
+    if (!isLoginTab) {
+      setUserName('');
+      setEmail('');
+      setPassword('');
+    }
+
     setTouched({
       userName: false,
       email: false,
@@ -75,12 +92,12 @@ const LoginForm = () => {
       email: '',
       password: '',
     });
-};
+  };
+
 
   const handleForgotPassword = () => {
     setIsForgotPassword(true);
     setIsLogin(false);
-   
     setUserName('');
     setEmail('');
     setPassword('');
@@ -95,9 +112,7 @@ const LoginForm = () => {
       password: '',
     });
   };
-
-  
-  
+  ;
 
   const validate = () => {
     const newErrors = {};
@@ -123,8 +138,18 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) {
+      e.preventDefault();
       return;
     }
+  
+      const tokenData = { name: 'Імя Користувача' }; 
+      localStorage.setItem('userName', tokenData.name);
+  
+      navigate('/');
+      
+      
+    
+  
     const userData = {
       Email: email,
       PasswordHash: password,
@@ -134,9 +159,11 @@ const LoginForm = () => {
       CreatedAt: new Date().toISOString(),
       LastLogin: null,
     };
+
     if (!isLogin) {
       userData.UserName = userName;
     }
+
     try {
       const response = await fetch(isLogin ? LOGIN_URL : REGISTER_URL, {
         method: 'POST',
@@ -146,23 +173,42 @@ const LoginForm = () => {
         },
         body: JSON.stringify(userData),
       });
+
       if (!response.ok) {
         const errorData = await response.json();
         throw new Error(errorData.message || 'Помилка при обробці запиту.');
       }
+
       const data = await response.json();
       console.log(data);
+
       if (isLogin) {
+        const userToken = {
+          token: data.token
+        };
+
         sessionStorage.setItem('tokenKey', JSON.stringify(data));
+        const tokenData = JSON.parse(sessionStorage.getItem('tokenKey'));
+
+        sessionStorage.setItem('tokenKey', JSON.stringify(data));
+        
+
+        const token = sessionStorage.getItem('tokenKey');
+        const storedToken = token ? JSON.parse(token) : null;
+
         if (rememberMe) {
           localStorage.setItem('email', email);
           localStorage.setItem('password', password);
+          localStorage.setItem('userName', tokenData.name); 
+         
         } else {
           localStorage.removeItem('email');
           localStorage.removeItem('password');
+          localStorage.removeItem('userName', tokenData.name);
         }
-        alert('Вхід успішний!');
-        navigate('/');
+
+        window.location.reload();
+       
       } else {
         alert('Реєстрація успішна!');
       }
@@ -172,7 +218,6 @@ const LoginForm = () => {
     }
   };
 
-  
 
   const handleForgotPasswordSubmit = async (e) => {
     e.preventDefault();
@@ -205,8 +250,8 @@ const LoginForm = () => {
   const handleBackToLogin = () => {
     setIsForgotPassword(false);
     setIsLogin(true);
-  
-  
+
+
     setUserName('');
     setEmail('');
     setPassword('');
@@ -220,8 +265,9 @@ const LoginForm = () => {
       email: '',
       password: '',
     });
+
   };
-  
+
 
   return (
     <div className="login-form-container">

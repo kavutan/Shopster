@@ -19,6 +19,7 @@ function App() {
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/login" element={<LoginForm />} />
         </Routes>
         <Footer />
       </div>
