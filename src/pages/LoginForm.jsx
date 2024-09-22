@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/LoginForm.css';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { LOGIN_URL, REGISTER_URL, FORGOT_PASSWORD_URL} from '../Constants/url.js';
 
-const REGISTER_URL = 'http://localhost:5123/gateway/users';
-const LOGIN_URL = 'http://localhost:5123/gateway/autorizes';
-const FORGOT_PASSWORD_URL = 'http://localhost:5123/gateway/forgotpassword';
 
 const LoginForm = () => {
   const [isLogin, setIsLogin] = useState(true);
@@ -189,11 +187,9 @@ const LoginForm = () => {
 
         sessionStorage.setItem('tokenKey', JSON.stringify(data));
         const tokenData = JSON.parse(sessionStorage.getItem('tokenKey'));
-
-        sessionStorage.setItem('tokenKey', JSON.stringify(data));
-        
-
+        //sessionStorage.setItem('tokenKey', JSON.stringify(data));
         const token = sessionStorage.getItem('tokenKey');
+        alert(tokenData.access_token);
         const storedToken = token ? JSON.parse(token) : null;
 
         if (rememberMe) {

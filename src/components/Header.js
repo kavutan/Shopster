@@ -7,6 +7,7 @@ import btnCart from '../images/Vector2.svg';
 import btnWishlist from '../images/Vector.svg';
 import btnComponent30 from '../images/Component30.png';
 import LeftSidebarPage from '../components/LeftSidebarPage';
+import {GetName} from '../helpers/auth';
 import { Link } from 'react-router-dom';
 const Header = ({ setCurrentPage }) => {
   
