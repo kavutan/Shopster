@@ -8,7 +8,7 @@ import Down from '../components/Down';
 
 const MyOrders = () => {
     const [orders, setOrders] = useState([]); // Створюємо стан для збереження замовлень
-    const [isShowDown, setIsShowDown] = useState(false); // Створюємо стан для збереження замовлень
+    const [isShowDown, setIsShowDown] = useState(false); 
     const [error, setError] = useState(null); // Створюємо стан для збереження помилок
     const [gap, setGap] = useState('42.43vw'); // Створюємо стан для gap
   
@@ -32,13 +32,13 @@ const MyOrders = () => {
             return response.json();
           })
           .then(data => {
+            //alert('Orders State: ' + JSON.stringify(orders, null, 2)); // Виводимо дані з стану orders
             if (data && Array.isArray(data.$values)) {
                 setOrders(data.$values); // Встановлюємо масив з $values у стан
             } else {
                 setOrders([]); // Якщо не масив, встановлюємо порожній масив
             }
-            alert('Data OK: ' + JSON.stringify(data.$values, null, 2)); // Виводимо масив у форматі JSON
-            alert('Orders State: ' + JSON.stringify(orders, null, 2)); // Виводимо дані з стану orders
+            //alert('Data OK: ' + JSON.stringify(data.$values, null, 2)); // Виводимо масив у форматі JSON         
           })
           .catch(error => {
             setError('Помилка: ' + error.message); // Обробка помилки
@@ -50,19 +50,19 @@ const MyOrders = () => {
   
     useEffect(() => {
         if (orders.length > 0) {
-          alert('Orders State: ' + JSON.stringify(orders, null, 2)); // Виводимо дані з стану orders
+          //alert('Orders State: ' + JSON.stringify(orders, null, 2)); // Виводимо дані з стану orders
         }
       }, [orders]); // Запуститься, коли `orders` зміниться
 
     return (
       <div className="my-orders">
-           <h3 className="text-1">Мої замовлення</h3>  
+           <h3 className="my-orders-title">Мої замовлення</h3>  
         <div className="frame-302" style={{ gap }}>      
           <div className="frame-220">
           <input
              type="text"
              placeholder="Я шукаю..."
-             className="search-input"
+             className="search-input-order"
         />
         <button className="search-button">Знайти замовлення</button>
         </div>  
@@ -99,8 +99,8 @@ const MyOrders = () => {
                         <>
                           <img src={order.product.imageUrl} alt={order.product.productName} className="product-image" />
                           <div className="product-description">
-                            <strong>{order.product.productName}</strong>
-                            <p>{order.product.description}</p>
+                            <p>{order.product.productName}</p>
+                            <p>{/*order.product.description*/}</p>
                           </div>
                         </>
                       ) : (
@@ -108,7 +108,7 @@ const MyOrders = () => {
                       )}
                     </div>
                   </td>
-                  <td>{order.product ? order.product.price.toFixed(2) + ' грн' : 'N/A'}</td>
+                  <td>{order.product ? order.product.price.toFixed(2) + ' ₴' : 'N/A'}</td>
                   <td>{new Date(order.orderDate).toLocaleDateString()}</td>
                   <td>{order.status}</td>
                 </tr>
