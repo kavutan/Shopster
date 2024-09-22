@@ -7,7 +7,7 @@ import btnCart from '../images/Vector2.svg';
 import btnWishlist from '../images/Vector.svg';
 import btnComponent30 from '../images/Component30.png';
 import LeftSidebarPage from '../components/LeftSidebarPage';
-import {GetName} from '../helpers/auth';
+import {getName} from '../helpers/auth';
 import { Link } from 'react-router-dom';
 const Header = ({ setCurrentPage }) => {
   
@@ -28,6 +28,8 @@ const Header = ({ setCurrentPage }) => {
     localStorage.removeItem('password');
     localStorage.removeItem('userName');
     localStorage.removeItem('token');
+    sessionStorage.removeItem('tokenKey');
+    setUserName(null);
     setMenuOpen(false);
   };
 
@@ -38,8 +40,10 @@ const Header = ({ setCurrentPage }) => {
         setMenuOpen(false);
         
       }
-      if (userName) {
-        setUserName(userName1);
+      if (userName) {      
+        const uName=getName();
+        //alert('Username-> '+ uName);
+        setUserName(uName);
       }
     };
 
@@ -48,6 +52,12 @@ const Header = ({ setCurrentPage }) => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [menuOpen]);
+
+   useEffect(()=>{
+    const uName=getName();
+    //alert('Username-> '+ uName);
+    setUserName(uName);
+   },[userName1]);
 
   return (
     <header className="header">
@@ -100,8 +110,8 @@ const Header = ({ setCurrentPage }) => {
           </div>
           <div className="welcome-message">
             <span>Привіт, </span>
-            {userName ? (
-              <span>{userName}</span>
+            {userName1 ? (
+              <span>{userName1}</span>
             ) : (
               <Link to="/login" className="account-option-button">
                 Увійти тут

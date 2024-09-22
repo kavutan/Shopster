@@ -189,7 +189,7 @@ const LoginForm = () => {
         const tokenData = JSON.parse(sessionStorage.getItem('tokenKey'));
         //sessionStorage.setItem('tokenKey', JSON.stringify(data));
         const token = sessionStorage.getItem('tokenKey');
-        alert(tokenData.access_token);
+        //alert(tokenData.access_token);
         const storedToken = token ? JSON.parse(token) : null;
 
         if (rememberMe) {
@@ -200,7 +200,7 @@ const LoginForm = () => {
         } else {
           localStorage.removeItem('email');
           localStorage.removeItem('password');
-          localStorage.removeItem('userName', tokenData.name);
+          localStorage.removeItem('userName');
         }
 
         window.location.reload();
