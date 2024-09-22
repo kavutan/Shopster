@@ -17,7 +17,6 @@ const Header = ({ setCurrentPage }) => {
   const [cartPrice, setCartPrice] = useState(0.00);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const menuRef = useRef(null);
-  const userName = localStorage.getItem('userName');
   const storedToken = JSON.parse(sessionStorage.getItem('tokenKey'));
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -26,10 +25,9 @@ const Header = ({ setCurrentPage }) => {
   const handleLogout = () => {
     localStorage.removeItem('email');
     localStorage.removeItem('password');
-    localStorage.removeItem('userName');
-    localStorage.removeItem('token');
+    localStorage.removeItem('token'); 
     sessionStorage.removeItem('tokenKey');
-    setUserName(null);
+    setUserName(''); 
     setMenuOpen(false);
   };
 
@@ -40,11 +38,6 @@ const Header = ({ setCurrentPage }) => {
         setMenuOpen(false);
         
       }
-      if (userName) {      
-        const uName=getName();
-        //alert('Username-> '+ uName);
-        setUserName(uName);
-      }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
@@ -53,11 +46,13 @@ const Header = ({ setCurrentPage }) => {
     };
   }, [menuOpen]);
 
-   useEffect(()=>{
-    const uName=getName();
-    //alert('Username-> '+ uName);
-    setUserName(uName);
-   },[userName1]);
+  useEffect(() => {
+    
+    if (storedToken) {
+      const uName = getName();
+      setUserName(uName);
+    }
+  }, [storedToken]);
 
   return (
     <header className="header">

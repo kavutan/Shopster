@@ -101,8 +101,8 @@
     padding: 2% 0 4% 0;
     gap: 7.71%;
     width: auto;
-    height: 106%;
-    border-bottom: 12.2% solid transparent;
+    height: 102%;
+    border-bottom: 0.125vh solid #E9E9E9;
     text-decoration: none;
     box-sizing: border-box;
     position: relative;
@@ -181,4 +181,7 @@
 .show-more-button:hover {
    
     color:#6746CE;
+}
+.button_arrow:hover .vector {
+    filter: invert(20%) sepia(100%) saturate(5000%) hue-rotate(250deg) brightness(90%) contrast(100%);
 }

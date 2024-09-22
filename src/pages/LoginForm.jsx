@@ -189,8 +189,9 @@ const LoginForm = () => {
         const tokenData = JSON.parse(sessionStorage.getItem('tokenKey'));
         //sessionStorage.setItem('tokenKey', JSON.stringify(data));
         const token = sessionStorage.getItem('tokenKey');
-        //alert(tokenData.access_token);
+      
         const storedToken = token ? JSON.parse(token) : null;
+        console.log('Token data:', storedToken);
 
         if (rememberMe) {
           localStorage.setItem('email', email);
