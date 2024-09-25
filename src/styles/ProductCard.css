@@ -11,11 +11,12 @@
   order: 0;
   flex-grow: 0;
   background-color: #FFFFFF;
-  border-radius: 3vw;
+  border-radius: 1.5vw;
+  overflow: hidden;
 }
+
 .product-card:hover {
-  background-color: hsl(0, 0%, 94%); 
-  box-shadow: 0 0.25vw 0.5vw rgba(0, 0, 0, 0.1), 0 0.375vw 1.25vw rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 0.25vw 0.5vw rgba(0, 0, 0, 0.1), 0 0.375vw 1.25vw rgba(0, 0, 0, 0.1);
 }
 
 
@@ -31,7 +32,6 @@
   align-self: stretch;
   flex-grow: 0;
   z-index: 1;
-  background-color: #FF1887;
 
 }
 
@@ -49,7 +49,8 @@
   flex-grow: 0;
   padding-left: 0%;
   padding-right: 0%;
-  background-color:  #FFFFFF;;
+  background-color: #FFFFFF;
+  ;
 
 }
 
@@ -59,14 +60,14 @@
   justify-content: flex-end;
   align-items: center;
   padding: 1% 4% 1% 4%;
-  gap: 60.42%;
+  gap: 61.96%;
   width: 100%;
   height: 17%;
   flex: none;
   order: 0;
   align-self: stretch;
   flex-grow: 0;
-  background-color:  #FFFFFF;
+  background-color: #FFFFFF;
   box-sizing: border-box;
 }
 
@@ -99,37 +100,47 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width: 15%;
-  height: 80%;
+  padding: 0.55vw;
+  gap: 0.69vw;
+  width: 2.22vw;
+  height: 2.22vw;
   background: #FFFFFF;
-  border: 0.125rem solid #E9E9E9;
+  border: 0.07vw solid #E9E9E9;
   box-shadow: 0 0 0.4% rgba(74, 74, 74, 0.16);
   border-radius: 50%;
   flex: none;
   order: 1;
   flex-grow: 0;
   cursor: pointer;
-  margin-right: 4.27%;
+
   transition: background-color 0.3s ease;
 }
+
 
 .btn_like:hover .Vector img {
   filter: invert(39%) sepia(50%) saturate(4916%) hue-rotate(242deg) brightness(89%) contrast(89%);
 }
 
 .Vector {
-  position: relative;
-  width: 70%;
-  height: 70%;
+  width: 1.11vw;
+  height: 1.11vw;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .Vector img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+  width: 1.11vw;
+  height: 1.11vw;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .item-details {
@@ -152,7 +163,7 @@
   line-height: 1.5;
   letter-spacing: 0.05em;
   color: #221F1F;
-  background-color:  #FFFFFF;
+  background-color: #FFFFFF;
   width: 93.16%;
   height: 30.37%;
   display: flex;
@@ -178,7 +189,7 @@
   width: 93.16%;
   height: 11.39%;
   box-sizing: border-box;
-  background-color:  #FFFFFF;
+  background-color: #FFFFFF;
   padding-left: 2%;
   margin-top: 2%;
 }
@@ -189,11 +200,12 @@
   align-items: center;
   gap: 4.1%;
   width: 6.5vw;
-  height: 100%; 
+  height: 100%;
   box-sizing: border-box;
-  background:  #FFFFFF;
-  padding: 0.1vw; 
+  background: #FFFFFF;
+  padding: 0.1vw;
 }
+
 .star_rewievs {
   width: 1.14vw;
   height: 100%;
@@ -204,10 +216,10 @@
 }
 
 .star_reviews img {
-  width: 1.14vw; 
-  height: 100%; 
+  width: 1.14vw;
+  height: 100%;
   display: flex;
-  object-fit: contain; 
+  object-fit: contain;
 }
 
 .reviews-count {
@@ -232,7 +244,8 @@
   flex: none;
   order: 1;
   flex-grow: 0;
-  background-color:  #FFFFFF;;
+  background-color: #FFFFFF;
+  ;
 }
 
 .PriceandCTA {
@@ -248,7 +261,8 @@
   order: 2;
   align-self: stretch;
   flex-grow: 0;
-  background-color:  #FFFFFF;;
+  background-color: #FFFFFF;
+  ;
   box-sizing: border-box;
   margin-left: 4%;
   margin-top: 2%;
@@ -265,7 +279,8 @@
   flex: none;
   order: 0;
   flex-grow: 0;
-  background-color:  #FFFFFF;;
+  background-color: #FFFFFF;
+  ;
 }
 
 .Oldprice {
@@ -280,7 +295,8 @@
   order: 0;
   align-self: stretch;
   flex-grow: 0;
-  background-color:  #FFFFFF;;
+  background-color: #FFFFFF;
+  ;
   font-family: 'Wix Madefor Display', sans-serif;
   font-weight: 700;
   font-size: 1.1vw;
@@ -300,7 +316,8 @@
   height: auto;
   flex: none;
   order: 1;
-  background-color:  #FFFFFF;;
+  background-color: #FFFFFF;
+  ;
   font-family: 'Wix Madefor Display', sans-serif;
   font-weight: 700;
   font-size: 1.8vw;
@@ -308,7 +325,7 @@
   letter-spacing: 0.05em;
   padding-top: 2%;
   box-sizing: border-box;
-  color:#FF1887;
+  color: #FF1887;
 }
 
 
@@ -316,7 +333,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 3.05vw; 
+  width: 3.05vw;
   height: 73.33%;
   background-color: #6746CE;
   border-radius: 25%;
@@ -327,12 +344,12 @@
   margin-bottom: 0.6vw;
   margin-left: 0.35vw;
   box-sizing: border-box;
- 
+
 }
 
 .btn_basket img {
   width: 3.05vw;
-  height: 100%; 
+  height: 100%;
   display: flex;
-  object-fit: cover; 
+  object-fit: cover;
 }
