@@ -5,7 +5,7 @@ import frame from '../images/Frame.svg';
 import arrowImage from '../images/Wishlist.svg';
 import btnCart from '../images/Vector2.svg';
 import btnWishlist from '../images/Vector.svg';
-import btnComponent30 from '../images/Component30.png';
+import btnComponent30 from '../images/Component30.svg';
 import LeftSidebarPage from '../components/LeftSidebarPage';
 import {getName} from '../helpers/auth';
 import { Link } from 'react-router-dom';

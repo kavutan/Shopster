@@ -2,17 +2,16 @@ import React, { useState } from 'react';
 import '../styles/ProductCard.css';
 import heartIcon from '../images/heart_16x16.svg';
 import heartIcon1 from '../images/Property 1=active.svg';
-import star1 from '../images/Star1.svg';
-import star2 from '../images/Star2.svg';
 import basket from '../images/basket.svg';
+import StarReviews from './StarReviews'; // Імпорт нового компонента
 import Caurosel from './Carousel';
 
 function ProductCard() {
-    // Створюємо стан для улюблених товарів
     const [liked, setLiked] = useState(false);
+    const [rating] = useState(4);  // Можна зберегти рейтинг в стані, якщо потрібно
 
     const toggleLike = () => {
-        setLiked((prev) => !prev); // Переключаємо стан
+        setLiked((prev) => !prev);
     };
 
     return (
@@ -24,9 +23,9 @@ function ProductCard() {
                     </div>
                     <div className="btn_like" onClick={toggleLike}>
                         <div className="Vector">
-                            <img 
-                                src={liked ? heartIcon1 : heartIcon} 
-                                alt="Heart Icon" 
+                            <img
+                                src={liked ? heartIcon1 : heartIcon}
+                                alt="Heart Icon"
                             />
                         </div>
                     </div>
@@ -39,23 +38,9 @@ function ProductCard() {
                 <div className="item-title">Мобільний телефон Samsung Galaxy A55 5G 8/256GB Lilac (SM-A556BLVCEUC)</div>
                 <div className="frame-73">
                     <div className="reviews">
-                        <div className="star_reviews">
-                            <img src={star1} alt="Star1" />
-                        </div>
-                        <div className="star_reviews">
-                            <img src={star1} alt="Star1" />
-                        </div>
-                        <div className="star_reviews">
-                            <img src={star1} alt="Star1" />
-                        </div>
-                        <div className="star_reviews">
-                            <img src={star2} alt="Star2" />
-                        </div>
-                        <div className="star_reviews">
-                            <img src={star2} alt="Star2" />
-                        </div>
+                        <StarReviews rating={3} />
                     </div>
-                    <div className="reviews-count">27 відгуки</div>
+                    <div className="reviews-count">27 відгуків</div>
                 </div>
                 <div className="PriceandCTA">
                     <div className="Price">
@@ -76,9 +61,3 @@ function ProductCard() {
 }
 
 export default ProductCard;
-
-
-
-
-
-
