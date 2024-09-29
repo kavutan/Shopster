@@ -3,6 +3,7 @@ import '../styles/HomePage.css';
 import MenuCategoryBanner from '../components/MenuCategoryBanner';
 import Tabitems_horisontal from '../components/Tabitems_horisontal';
 import Latestoffers from '../components/Latestoffers';
+import Banner1300x112 from '../components/Banner1300x112';
 
 function HomePage() {
   return (
@@ -10,6 +11,7 @@ function HomePage() {
       <MenuCategoryBanner />
       <Tabitems_horisontal/>
       <Latestoffers/>
+      <Banner1300x112/>
     </div>
   );
 }

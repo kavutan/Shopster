@@ -1,0 +1,118 @@
+.Banner1300x112 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    padding: 1.66vw 4.44vw;
+    width: 90vw;
+    height: 7.77vw;
+    background: #6746CE;
+    border-radius: 0.69vw;
+    box-sizing: border-box;
+}
+
+.Content11 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    padding: 0;
+    gap: 3.75vw;
+    width: 54.32%;
+    height: 4.44vw;
+}
+
+.minus {
+    width: 12.92%;
+    height: 3.75vw;
+    color: white;
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-weight: 800;
+    font-size: 2.5vw;
+    line-height: 3.75vw;
+    letter-spacing: 0.05em;
+
+}
+
+.Description01 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 0.27vw;
+    width: 79.4%;
+    height: 4.44vw;
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+}
+
+.super {
+    width: 100%;
+    height: 2.5vw;
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 1.66vw;
+    line-height: 2.5vw;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.code {
+    width: 100%;
+    height: 1, 66vw;
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.11vw;
+    line-height: 1.66vw;
+    color: #E9E9E9;
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.Frame304 {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0.42vw 1.15vw;
+    gap: 0.69vw;
+    width: 12.81%;
+    height: 3.33vw;
+    border: 0.138vw solid #FFFFFF;
+    border-radius: 0.69vw;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    background-color: #6746CE;
+    box-sizing: border-box;
+    margin-left: 30.86%;
+    cursor: pointer;
+}
+
+.but {
+    width: 100%;
+    height: 2.5vw;
+    font-family: 'Wix Madefor Display', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.5vw;
+    line-height: 2.5vw;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.Frame304:hover {
+    background-color:#8C6EF0;
+}
