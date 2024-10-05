@@ -3,12 +3,12 @@ import '../styles/ProductCard.css';
 import heartIcon from '../images/heart_16x16.svg';
 import heartIcon1 from '../images/Property 1=active.svg';
 import basket from '../images/basket.svg';
-import StarReviews from './StarReviews'; // Імпорт нового компонента
+import StarReviews from './StarReviews'; 
 import Caurosel from './Carousel';
 
 function ProductCard() {
     const [liked, setLiked] = useState(false);
-    const [rating] = useState(4);  // Можна зберегти рейтинг в стані, якщо потрібно
+    const [rating] = useState(4);  
 
     const toggleLike = () => {
         setLiked((prev) => !prev);

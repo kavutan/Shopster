@@ -10,6 +10,7 @@
     background: #6746CE;
     border-radius: 0.69vw;
     box-sizing: border-box;
+    margin-top: -1vw;
 }
 
 .Content11 {
@@ -115,4 +116,5 @@
 
 .Frame304:hover {
     background-color:#8C6EF0;
+    border: 0.138vw solid #8C6EF0;;
 }

@@ -1,0 +1,51 @@
+.carousel2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+}
+
+.mask-group2 {
+    width: 100%;
+    height: 10.97vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    position: relative;
+}
+
+.mask-group-image2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5vw;
+}
+
+.carousel-controls2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    gap: 5%;
+    width: 30%;
+    height: 7%;
+}
+
+.carousel-btn2 {
+    width: 0.55vw;
+    height: 0.55vw;
+    border-radius: 50%;
+    background: #D9D9D9;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.carousel-btn2.active {
+    background: #6746CE;
+}

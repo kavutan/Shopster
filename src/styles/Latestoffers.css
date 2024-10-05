@@ -212,6 +212,11 @@
     margin-top: -2vw;
     margin-bottom: 1vw;
 }
+.phone-title:hover {
+    color: #6746CE;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
 .reviews-count1 {
     width: 30.35%;
