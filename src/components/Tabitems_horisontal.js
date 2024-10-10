@@ -1,14 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Tabitems_horisontal.css';
 import vector from '../images/Vector10.svg';
 import ProductCard from './ProductCard';
+import { PRODUCTS_URL } from '../Constants/url.js'; 
 
 function Tabitems_horisontal() {
   const [activeTab, setActiveTab] = useState(1);
+  const [products, setProducts] = useState([]);
 
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
   };
+
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch(`${PRODUCTS_URL}/top/3/5`);
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const data = await response.json();
+      const products = data.$values;
+      setProducts(products);
+    } catch (error) {
+      console.error('Виникла помилка при отриманні даних:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
 
   return (
     <div className="tabitems_horisontal">
@@ -39,22 +59,20 @@ function Tabitems_horisontal() {
           </div>
         </div>
       </div>
+
+      {/* Генерація ProductCard динамічно */}
       <div className="grid-container">
-        <div className="grid-item">
-          <ProductCard />
-        </div>
-        <div className="grid-item">
-          <ProductCard />
-        </div>
-        <div className="grid-item">
-          <ProductCard />
-        </div>
-        <div className="grid-item">
-          <ProductCard />
-        </div>
-        <div className="grid-item">
-          <ProductCard />
-        </div>
+        {products.map((product, index) => (
+          <div key={index} className="grid-item">
+            <ProductCard
+              productName={product.productName}
+              price={product.price}
+              lastPrice={product.lastPrice}
+              description={product.description}
+              imageURLs={product.imageURLs.$values}
+            />
+          </div>
+        ))}
       </div>
     </div>
   );

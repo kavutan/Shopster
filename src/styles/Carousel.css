@@ -8,22 +8,26 @@
    
 }
 
+
+
 .mask-group {
-    width: 88.46%;
-    height: 87%;
+    width: 14.38vw;
+    height: 10.97vw;
     display: flex;
     align-items: center; 
     justify-content: center;
     background-color: #FFFFFF;
     margin-bottom: 3%;
     position: relative; 
+    overflow: hidden; /* Запобігає виходу зображення за межі контейнера */
 }
 
 .mask-group-image {
-    width: 77%;
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%; /* Масштабування зображення по ширині контейнера */
+    height: 100%; /* Масштабування по висоті контейнера */
+    object-fit: contain; /* Зображення зберігає пропорції всередині контейнера */
 }
+
 
 .carousel-controls {
     display: flex;
