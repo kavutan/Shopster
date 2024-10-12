@@ -3,12 +3,12 @@ import '../styles/ProductCard.css';
 import heartIcon from '../images/heart_16x16.svg';
 import heartIcon1 from '../images/Property 1=active.svg';
 import basket from '../images/basket.svg';
-import StarReviews from './StarReviews'; 
+import StarReviews from './StarReviews';
 import Carousel from './Carousel';
 
-function ProductCard({ productName, price, lastPrice, description, imageURLs }) {
+function ProductCard({ productName, price, lastPrice, description, imageURLs, averageRating, reviewCount }) {
     const [liked, setLiked] = useState(false);
-    const discount = Math.round(((lastPrice - price) / lastPrice) * 100); // Розрахунок знижки
+    const discount = lastPrice === price ? 'new' : Math.round(((lastPrice - price) / lastPrice) * 100);
 
     const toggleLike = () => {
         setLiked((prev) => !prev);
@@ -19,7 +19,7 @@ function ProductCard({ productName, price, lastPrice, description, imageURLs }) 
             <div className="item-card">
                 <div className="wishlistanddiscount">
                     <div className="discount">
-                        {discount > 0 ? `-${discount}%` : null}
+                        {discount === 'new' ? 'New' : `-${discount}%`}
                     </div>
                     <div className="btn_like" onClick={toggleLike}>
                         <div className="Vector">
@@ -39,19 +39,21 @@ function ProductCard({ productName, price, lastPrice, description, imageURLs }) 
                 <div className="item-title">{productName}</div>
                 <div className="frame-73">
                     <div className="reviews">
-                        <StarReviews rating={3} />
+                        <StarReviews rating={averageRating} /> 
                     </div>
-                    <div className="reviews-count">27 відгуків</div>
+                    <div className="reviews-count">{reviewCount} відгуків</div> 
                 </div>
                 <div className="PriceandCTA">
                     <div className="Price">
-                        <div className="Oldprice">
+                        <div className="Oldprice" style={{ color: lastPrice === price ? 'transparent' : 'inherit' }}>
                             <del>{lastPrice} грн</del>
                         </div>
                         <div className="PriceNew">
                             {price} грн
                         </div>
                     </div>
+
+
                     <div className="btn_basket">
                         <img src={basket} alt="basket" />
                     </div>
