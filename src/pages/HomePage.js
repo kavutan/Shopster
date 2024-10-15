@@ -5,6 +5,7 @@ import Tabitems_horisontal from '../components/Tabitems_horisontal';
 import Latestoffers from '../components/Latestoffers';
 import Banner1300x112 from '../components/Banner1300x112';
 import BannerCards from '../components/BannerCards';
+import Tabitems_horisontal2 from '../components/Tabitems_horisontal2';
 
 
 function HomePage() {
@@ -15,6 +16,7 @@ function HomePage() {
       <Latestoffers/>
       <Banner1300x112/>
       <BannerCards/>
+      <Tabitems_horisontal2/>
     </div>
   );
 }

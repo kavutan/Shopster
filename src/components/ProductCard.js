@@ -3,12 +3,12 @@ import '../styles/ProductCard.css';
 import heartIcon from '../images/heart_16x16.svg';
 import heartIcon1 from '../images/Property 1=active.svg';
 import basket from '../images/basket.svg';
-import StarReviews from './StarReviews'; 
-import Caurosel from './Carousel';
+import StarReviews from './StarReviews';
+import Carousel from './Carousel';
 
-function ProductCard() {
+function ProductCard({ productName, price, lastPrice, description, imageURLs, averageRating, reviewCount }) {
     const [liked, setLiked] = useState(false);
-    const [rating] = useState(4);  
+    const discount = lastPrice === price ? 'new' : Math.round(((lastPrice - price) / lastPrice) * 100);
 
     const toggleLike = () => {
         setLiked((prev) => !prev);
@@ -19,7 +19,7 @@ function ProductCard() {
             <div className="item-card">
                 <div className="wishlistanddiscount">
                     <div className="discount">
-                        -10%
+                        {discount === 'new' ? 'New' : `-${discount}%`}
                     </div>
                     <div className="btn_like" onClick={toggleLike}>
                         <div className="Vector">
@@ -31,26 +31,29 @@ function ProductCard() {
                     </div>
                 </div>
                 <div className="slider-item-preview">
-                    <Caurosel />
+                    {/* Передаємо зображення в компонент Carousel */}
+                    <Carousel images={imageURLs} />
                 </div>
             </div>
             <div className="item-details">
-                <div className="item-title">Мобільний телефон Samsung Galaxy A55 5G 8/256GB Lilac (SM-A556BLVCEUC)</div>
+                <div className="item-title">{productName}</div>
                 <div className="frame-73">
                     <div className="reviews">
-                        <StarReviews rating={3} />
+                        <StarReviews rating={averageRating} /> 
                     </div>
-                    <div className="reviews-count">27 відгуків</div>
+                    <div className="reviews-count">{reviewCount} відгуків</div> 
                 </div>
                 <div className="PriceandCTA">
                     <div className="Price">
-                        <div className="Oldprice">
-                            <del>16 999 грн</del>
+                        <div className="Oldprice" style={{ color: lastPrice === price ? 'transparent' : 'inherit' }}>
+                            <del>{lastPrice} грн</del>
                         </div>
                         <div className="PriceNew">
-                            15 999 грн
+                            {price} грн
                         </div>
                     </div>
+
+
                     <div className="btn_basket">
                         <img src={basket} alt="basket" />
                     </div>

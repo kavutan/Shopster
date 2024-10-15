@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import '../styles/Carousel.css';
-import image1 from '../images/1-1.svg';
-import image2 from '../images/1-2.svg';
-import image3 from '../images/1-3.svg';
-import image4 from '../images/1-4.svg';
 
-const Carousel = () => {
-    const images = [image1, image2, image3, image4];
+const Carousel = ({ images = [] }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+    
+    if (!images.length) {
+        return <div>No images available</div>; // Якщо немає зображень, виводимо повідомлення
+    }
 
     const showImage = (index) => {
         if (index >= 0 && index < images.length) {
@@ -26,8 +26,7 @@ const Carousel = () => {
 
     return (
         <div className="carousel">
-          
-            <div className="mask-group"onClick={handleImageClick}>
+            <div className="mask-group" onClick={handleImageClick}>
                 <img
                     src={images[currentImageIndex]}
                     alt={`Image ${currentImageIndex + 1}`}
@@ -44,7 +43,6 @@ const Carousel = () => {
                     />
                 ))}
             </div>
-
         </div>
     );
 };

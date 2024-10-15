@@ -112,6 +112,7 @@
 
 .tab_menu:hover .typography-body2-bold {
     color: #6746CE;
+    cursor: pointer;
 }
 
 .tab_menu.active {

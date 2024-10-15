@@ -20,3 +20,4 @@ export function getName() {
     const storedData = JSON.parse(sessionStorage.getItem('tokenKey'));
     return storedData ? storedData.name : null;
 }
+
