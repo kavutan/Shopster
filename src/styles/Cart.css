@@ -1,0 +1,125 @@
+  button, table, input, p {
+    font-family: 'Wix Madefor Display', sans-serif;
+  }
+
+  .cart-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white;
+    padding: 0 2rem 2rem 2rem;
+    min-height: calc(100vh - 13.6vw);
+    padding-top: 6.8vw; /* Відступ зверху, щоб форма не заїжджала під header */
+  }
+  
+  .cart-items-section {
+    flex: 2;
+    margin-right: 20px;
+  }
+  
+  .free-delivery-info {
+    background-color: #f7f7f7;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .highlight {
+    color: #ff1887;
+    font-weight: bold;
+  }
+  
+  .cart-table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .cart-table th, .cart-table td {
+    text-align: left;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .cart-item-image {
+    width: 75px;
+    height: 75px;
+    margin-right: 15px;
+    object-fit: cover;
+  }
+  
+  .discount-section {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  .discount-input {
+    flex: 2;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .checkout-button {
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 14px;
+    width: 100%;
+    cursor: pointer;
+    background-color: #6746CE;
+    border-radius: 4px;
+  }
+  
+  .apply-discount-button, .remove-all-button {
+    background-color: white;
+    color: #6746ce;
+    border: 1px solid #6746ce;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-left: auto;
+  }
+
+  .apply-discount-button {
+    margin-right: 10px;
+  }
+  
+  .cart-summary-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .summary-address {
+    margin-top: 20px;
+  }
+  
+  .change-address-button {
+    margin-top: 10px;
+    background-color: transparent;
+    color: #6746ce;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 20px;
+  }
