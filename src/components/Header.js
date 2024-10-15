@@ -9,6 +9,7 @@ import btnComponent30 from '../images/Component30.svg';
 import LeftSidebarPage from '../components/LeftSidebarPage';
 import {getName} from '../helpers/auth';
 import { Link } from 'react-router-dom';
+
 const Header = ({ setCurrentPage }) => {
   
   const [userName1, setUserName] = useState('');
@@ -112,16 +113,16 @@ const Header = ({ setCurrentPage }) => {
                 Увійти тут
               </Link>
             )}
-          </div>
+          </div> 
 
         </div>
-        <button className="wishlist-button" onClick={() => setCurrentPage('wishlist')}>
+        <Link to="/wishlist" className="wishlist-button">
           <img
             src={btnWishlist}
             alt="Wishlist"
             className="icon-image"
           />
-        </button>
+        </Link>
         <button className="component30">
           <img
             src={btnComponent30}
@@ -129,13 +130,13 @@ const Header = ({ setCurrentPage }) => {
             className="icon-image"
           />
         </button>
-        <button className="cart-button">
+        <Link to="/cart" className="cart-button">
           <img
             src={btnCart}
             alt="Cart"
             className="icon-image"
           />
-        </button>
+        </Link>
         <div className="cart-info">
           <span className="cart-items">{cartItems} предметів</span>
           <span className="cart-price">{cartPrice} ₴</span>
