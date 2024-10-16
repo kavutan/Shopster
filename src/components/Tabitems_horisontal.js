@@ -17,7 +17,7 @@ function Tabitems_horisontal() {
     setProducts([]); // Очищуємо продукти при зміні категорії
   };
 
-  // Функція для отримання продуктів з сервера
+  
   const fetchProducts = async (categoryId) => {
     try {
       const response = await fetch(`${PRODUCTS_URL}/top/${categoryId}/50`); // Отримуємо одразу багато продуктів

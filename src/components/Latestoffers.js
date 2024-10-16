@@ -3,13 +3,15 @@ import '../styles/Latestoffers.css';
 import vector from '../images/Vector10.svg';
 import heartIcon from '../images/heart_16x16.svg';
 import heartIcon1 from '../images/Property 1=active.svg';
-import StarReviews from './StarReviews'; 
+import StarReviews from './StarReviews';
 import { PRODUCTS_LATEST } from '../Constants/url.js';
 
 function Latestoffers() {
   const [likedItems, setLikedItems] = useState([]);
-  const [products, setProducts] = useState([]); // Стан для продуктів
-  const [loading, setLoading] = useState(true); // Стан для завантаження
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [startIndex, setStartIndex] = useState(0);
+  const productsPerPage = 2;
 
   const toggleLike = (index) => {
     setLikedItems((prev) => {
@@ -18,39 +20,49 @@ function Latestoffers() {
       return newLikedItems;
     });
   };
+  const handleShowMore = () => {
+    const newIndex = (startIndex + productsPerPage) % products.length;
+    setStartIndex(newIndex);
+  };
+  const displayedProducts = [
+    ...products.slice(startIndex, startIndex + productsPerPage),
+    ...(startIndex + productsPerPage > products.length
+      ? products.slice(0, (startIndex + productsPerPage) % products.length)
+      : [])
+  ];
 
   useEffect(() => {
     const fetchLatestOffers = async () => {
-      setLoading(true); // Встановлюємо loading в true перед запитом
+      setLoading(true);
       try {
-        const response = await fetch(`${PRODUCTS_LATEST}/latest/2`); 
+        const response = await fetch(`${PRODUCTS_LATEST}/latest/50`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
         const data = await response.json();
-        console.log('Отримані дані:', data); // Виводимо отримані дані в консоль
+        console.log('Отримані дані:', data);
 
-        // Перевірка, чи data.$values є масивом
+
         if (Array.isArray(data.$values)) {
-          setProducts(data.$values); // Встановлюємо масив продуктів
-          setLikedItems(Array(data.$values.length).fill(false)); // Ініціалізація likedItems
+          setProducts(data.$values);
+          setLikedItems(Array(data.$values.length).fill(false));
         } else {
           console.error('Отримані дані не є масивом:', data);
-          setProducts([]); // Встановлюємо порожній масив у випадку помилки
+          setProducts([]);
         }
       } catch (error) {
         console.error('Error fetching latest offers:', error);
-        setProducts([]); // Встановлюємо порожній масив у випадку помилки
+        setProducts([]);
       } finally {
         setLoading(false);
       }
     };
 
     fetchLatestOffers();
-  }, []); // Залишаємо один useEffect
+  }, []);
 
   if (loading) {
-    return <div>Завантаження...</div>; // Відображаємо текст завантаження
+    return <div>Завантаження...</div>;
   }
 
   return (
@@ -58,21 +70,21 @@ function Latestoffers() {
       <div className="title-button">
         <div className="latest-offers-title">Останні пропозиції цього тижня</div>
         <div className="button_arrow">
-          <div className="show-more-button">Показати ще</div>
+          <div className="show-more-button" onClick={handleShowMore}>Показати ще</div>
           <div className="group">
             <img className="vector" src={vector} alt="Vector10" />
           </div>
         </div>
       </div>
       <div className="cards">
-        {products.map((product, index) => {
+        {displayedProducts.map((product, index) => {
           const discount = product.lastPrice === product.price ? 'new' : Math.round(((product.lastPrice - product.price) / product.lastPrice) * 100);
 
           return (
-            <div className="card_sale" key={product.id}> {/* Припускаємо, що у продукту є унікальний id */}
+            <div className="card_sale" key={product.id}>
               <div className="discount_22">
                 {discount === 'new' ? 'New' : `-${discount}%`}
-              </div> {/* Елемент з дісконтом */}
+              </div>
               <div className="mask-group1">
                 <div className="btn_like1" onClick={() => toggleLike(index)}>
                   <div className={`heart_16x16 ${likedItems[index] ? 'liked' : ''}`}>
@@ -84,7 +96,7 @@ function Latestoffers() {
                   </div>
                 </div>
                 <div className="picture">
-                  <img src={product.imageURLs.$values[0]} alt={product.productName} /> {/* Зображення з API */}
+                  <img src={product.imageURLs.$values[0]} alt={product.productName} />
                 </div>
               </div>
               <div className="frame-78">
