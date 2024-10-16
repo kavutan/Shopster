@@ -1,0 +1,368 @@
+.checkout_container{
+    display: flex;
+flex-direction: row;
+flex-wrap: nowrap;
+align-items: flex-start;
+align-content: flex-start;
+gap: 3.44vw 1.66vw;
+padding: 10.66vw 0vw 0vw 3vw ;
+width: 90vw;
+height: 80vw;
+
+}
+
+.left_column{
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 1.77vw;
+padding: 0vw 1vw;
+width: 59.16vw;
+min-width: 59.16vw;
+height: 127.6vw;
+
+}
+
+.checkout_form2{
+box-sizing: border-box;
+/* Auto layout */
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: flex-start;
+padding: 2.66vw;
+gap: 2.66vw;
+
+width: 29.16vw;
+min-width: 28.88vw;
+height: 74vw;
+
+background: #FCF8F0;
+/* Grey_3 */
+border: 0.11vw solid #E9E9E9;
+border-radius: 1.1vw;
+}
+
+.widget_Freedelivery{
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0.88vw;
+width: 59.16vw;
+height: 2.5vw;
+
+background: #F5F5F5;
+border-radius: 0.8vw;
+
+/* Inside auto layout 
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;*/
+
+}
+
+.Message{
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+
+width: 59.16vw;
+height: 1.7vw;
+background: #F5F5F5;
+border-radius: 1.1vw;
+/* Inside auto layout 
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;*/
+}
+
+.Frame-152{
+    /* Frame 152 */
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0vw;
+width: 31.51vw;
+height: 1.5vw;
+
+}
+
+.p_Text{
+    /* Для безкоштовної доставки вам залишилось додати товару ще на */
+width: 36.97vw;
+height: 1.33vw;
+/* BODY 2/body2_Regular */
+font-family: 'Wix Madefor Display', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 0.9vw;
+line-height: 1.2vw;
+padding: 0vw ;
+margin: 1vw 0vw 1vw 0.5vw;
+text-wrap: nowrap;
+align-items: center;
+/* identical to box height, or 150% */
+/* Black */
+color: #221F1F;
+/* Inside auto layout 
+flex: none;
+order: 0;
+flex-grow: 0;*/
+}
+.p_Value{
+    /* Message */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0vw 0vw 0vw 1vw;
+color: red;
+font-family: 'Wix Madefor Display', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 0.9vw;
+}
+.Frame-151{
+/* Frame 151 */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 1.1vw;
+width: 57vw;
+height: 0.5vw;
+border-radius: 1.1vw;
+background: #E9E9E9;
+/* Inside auto layout 
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;*/
+
+}
+
+.Title{
+ /* Title */
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 0.7vw;
+gap: 0.7vw;
+width: 59.16vw;
+height: 1.13vw;
+}
+.Title_text{
+    /* Оформлення замовлення */
+width: 59.16vw;
+height: 3.75vw;
+/* HEADER/h3_Bold */
+font-family: 'Wix Madefor Display', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 2.5vw;
+line-height: 3.75vw;
+padding: 0vw;
+margin: 0vw;
+/* identical to box height, or 150% */
+color: #000000;
+}
+.info{
+    /* info */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 3.44vw;
+width: 59.16vw;
+height: 67.9vw;
+
+/* Inside auto layout 
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;*/
+}
+.personalInformation{
+    /* info */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 3.44vw;
+width: 59.16vw;
+height: 15.44vw  ;
+
+
+/* Inside auto layout 
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;*/
+
+}
+
+.pInfoText{
+/* Персональна iнформацiя */
+width: 59.16vw;
+height: 0.1vw;
+/* HEADER/h5_Semibold */
+font-family: 'Wix Madefor Display', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 1.66vw;
+line-height: 2.5vw;
+padding: 0vw 0vw 0vw 0.7vw;
+/* identical to box height, or 150% */
+color: #000000;
+}
+
+.contentPart{
+/* Personalinformation */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0vw;
+gap: 1.1vw;
+width: 59.16vw;
+height: 22.44vw;
+}
+
+.leftColumn{
+    /* leftcolumn */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 2.66vw;
+
+width: 25.27vw;
+height: 15.88vw;
+/* Inside auto layout 
+flex: none;
+order: 0;
+flex-grow: 1;*/
+
+}
+.rightColumn{
+    /* rightcolumn */
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+padding-right: 9vw;
+gap: 2.66vw;
+width: 25.27vw;
+height: 15.88vw;
+/* Inside auto layout 
+flex: none;
+order: 1;
+flex-grow: 1;*/
+
+}
+.firstName{
+    /* firstname */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 0.55vw;
+width: 15.27vw;
+height: 5.41vw;
+}
+.Frame-143{
+    /* Frame 143 */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0vw;
+gap: 0.44vw;
+width: 15.27vw;
+height: 0.1vw;
+font-family: 'Wix Madefor Display', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 1.1vw;
+/* Inside auto layout 
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;*/
+
+}
+.spanLabel{
+    display: flex;
+flex-direction: row;
+align-items: start;
+padding: 0vw;
+color: red;
+}
+.Frame-142{
+/* Frame 142 */
+
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0.97vw 0.88vw;
+gap: 0.55vw;
+width: 25.27vw;
+height: 5.44vw;
+
+/* Blue_2 */
+border: 0.11vw solid #ACBAC7;
+border-radius: 0.7vw;
+}
+.mobilPhone{
+    /* mobilephone */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw ;
+gap: 0.55vw;
+width: 15.27vw;
+height: 5.41vw;
+/* Inside auto layout 
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;*/
+
+}
+.lastName{
+    /* lastname */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 0.55vw;
+width: 15.27vw;
+height: 5.41vw;
+/* Inside auto layout 
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;*/
+
+}
+.email{
+/* email */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0vw;
+gap: 0.55vw;
+width: 15.27vw;
+height: 5.41vw;
+}

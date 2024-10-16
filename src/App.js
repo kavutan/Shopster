@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import LoginForm from './pages/LoginForm';
 import MyOrders from './pages/MyOrders';
 import Wishlist from './pages/Wishlist';
+import Chekout from './pages/Chekout';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="/myorders" element={<MyOrders />} />
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/login" element={<LoginForm />} />
+          <Route path="/chekout" element={<Chekout />} />
         </Routes>
         <Footer />
       </div>
