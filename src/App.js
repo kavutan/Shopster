@@ -8,6 +8,7 @@ import MyOrders from './pages/MyOrders';
 import Wishlist from './pages/Wishlist';
 import Chekout from './pages/Chekout';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/chekout" element={<Chekout />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
         <Footer />
       </div>
