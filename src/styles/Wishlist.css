@@ -225,7 +225,7 @@
     margin-left: 1rem;
     margin-right: auto;
   }
-  
+
   .delete-all-button {
     background-color: white;
     color: #6746CE;
@@ -279,3 +279,11 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
   }  
+
+  .apply-code-button:hover, .delete-all-button:hover {
+    background-color: #e8e0ff;
+  }
+
+  .add-to-cart-button:hover, .subscribe-button:hover {
+    background-color: #5238a4;
+  }
